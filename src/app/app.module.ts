@@ -11,6 +11,8 @@ import { NavbarComponent } from './pages/shared/layout/navbar/navbar.component';
 import { ContainerComponent } from './pages/shared/layout/container/container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponentsModule } from './pages/shared/components/material-components/material-components.module';
+import { LoginModule } from './pages/login/login.module';
+import { WelcomeComponent } from './pages/shared/layout/welcome/welcome.component';
 
 
 
@@ -18,13 +20,15 @@ import { MaterialComponentsModule } from './pages/shared/components/material-com
   declarations: [
     AppComponent,
     ContainerComponent,
-    NavbarComponent
+    NavbarComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ApartmentModule,
     UserModule,
+    LoginModule,
     BrowserAnimationsModule,
     MaterialComponentsModule
   ],

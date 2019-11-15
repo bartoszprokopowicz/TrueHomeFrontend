@@ -1,85 +1,110 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active" ><div class="logo"></div></a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarText"
-    aria-controls="navbarText"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Users Components
+  <div class="container">
+    <a
+      class="navbar-brand logo"
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Users Components
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a
+              class="dropdown-item"
+              [routerLink]="['/users']"
+              routerLinkActive="active"
+              >User List
+            </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Apartments Components
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a
+              class="dropdown-item"
+              [routerLink]="['/apartments']"
+              routerLinkActive="active"
+            >
+              Apartments List
+            </a>
+            <a
+              class="dropdown-item"
+              [routerLink]="['/apartment/add']"
+              routerLinkActive="active"
+            >
+              Apartment Add
+            </a>
+            <a
+              class="dropdown-item"
+              [routerLink]="['/apartment/', '1']"
+              routerLinkActive="active"
+            >
+              Apartment Details 1
+            </a>
+            <a
+              class="dropdown-item"
+              [routerLink]="['/apartment/', '1', 'edit']"
+              routerLinkActive="active"
+            >
+              Apartment Edit 1
+            </a>
+          </div>
+        </li>
+      </ul>
+      <span>
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active">
+          <button
+            class="mx-1"
+            mat-flat-button
+            color="primary"
+            [routerLink]="['/login']"
+            routerLinkActive="router-link-active"
+          >
+            Login
+          </button>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a
-            class="dropdown-item"
-            [routerLink]="['/users']"
-            routerLinkActive="active"
-            >User List
-          </a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
+        <button
+          class="mx-1"
+          mat-flat-button
+          color="primary"
+          [routerLink]="['/register']"
+          routerLinkActive="router-link-active"
         >
-          Apartments Components
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a
-            class="dropdown-item"
-            [routerLink]="['/apartments']"
-            routerLinkActive="active"
-          >
-            Apartments List
-          </a>
-          <a
-            class="dropdown-item"
-            [routerLink]="['/apartment/add']"
-            routerLinkActive="active"
-          >
-            Apartment Add
-          </a>
-          <a
-            class="dropdown-item"
-            [routerLink]="['/apartment/', '1']"
-            routerLinkActive="active"
-          >
-            Apartment Details 1
-          </a>
-          <a
-            class="dropdown-item"
-            [routerLink]="['/apartment/', '1', 'edit']"
-            routerLinkActive="active"
-          >
-            Apartment Edit 1
-          </a>
-        </div>
-      </li>
-    </ul>
-    <span class="navbar-text">
-      Navbar text with an inline element
-    </span>
+          Register
+        </button>
+      </span>
+    </div>
   </div>
 </nav>

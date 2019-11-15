@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ContainerComponent } from './pages/shared/layout/container/container.component';
-import { AppComponent } from './app.component';
+import { WelcomeComponent } from './pages/shared/layout/welcome/welcome.component';
 
 
 const routes: Routes = [
-  {path: '*', redirectTo: '/index.html', pathMatch: 'full'}
+  {path: '', component: WelcomeComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

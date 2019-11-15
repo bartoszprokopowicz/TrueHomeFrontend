@@ -9,6 +9,8 @@ import { UserModule } from './pages/user/user.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './pages/shared/layout/navbar/navbar.component';
 import { ContainerComponent } from './pages/shared/layout/container/container.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialComponentsModule } from './pages/shared/components/material-components/material-components.module';
 
 
 
@@ -22,7 +24,9 @@ import { ContainerComponent } from './pages/shared/layout/container/container.co
     BrowserModule,
     AppRoutingModule,
     ApartmentModule,
-    UserModule
+    UserModule,
+    BrowserAnimationsModule,
+    MaterialComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

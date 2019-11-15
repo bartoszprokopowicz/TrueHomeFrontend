@@ -7,7 +7,6 @@ import { UserCreateComponent } from './user-create/user-create.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 
-
 @NgModule({
   declarations: [UserListComponent, UserCreateComponent, UserDetailsComponent, UserEditComponent],
   imports: [

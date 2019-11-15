@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { WelcomeComponent } from './pages/shared/layout/welcome/welcome.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', component: WelcomeComponent, pathMatch: 'full'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

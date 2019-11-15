@@ -7,7 +7,6 @@ import { ApartmentEditComponent } from './apartment-edit/apartment-edit.componen
 import { ApartmentCreateComponent } from './apartment-create/apartment-create.component';
 import { ApartmentDetailsComponent } from './apartment-details/apartment-details.component';
 
-
 @NgModule({
   declarations: [ApartmentListComponent, ApartmentEditComponent, ApartmentCreateComponent, ApartmentDetailsComponent],
   imports: [

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WelcomeComponent } from './pages/shared/layout/welcome/welcome.component';
-
+import { WelcomeComponent } from './layout/welcome/welcome.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent, pathMatch: 'full'}

@@ -1,0 +1,23 @@
+.f-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  &--img {
+    border-radius: 8px;
+    padding: 5px;
+    width: 100px;
+  }
+}
+
+.star-rating .fa-star {
+  color: yellow;
+}

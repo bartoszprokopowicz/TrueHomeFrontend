@@ -1,14 +1,24 @@
 <div *ngIf="whichSearch === 'google'">
-    <h3>Google Autocomplete</h3>
-    <div class="form-group">
-        <input type="text" placeholder="Search for Location" autocorrect="off" autocapitalize="off" spellcheck="off"
-        class="form-control" #searchGoogle>
-    </div>
+  <h3>Google Autocomplete</h3>
+  <input
+    type="text"
+    placeholder="Podaj miasto i ulicę szukanego mieszkania"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="off"
+    class="form-control"
+    #searchGoogle
+  />
 </div>
 <div *ngIf="whichSearch === 'default'">
-    <h3>Basic</h3>
-    <div class="form-group">
-        <input type="text" placeholder="Search for Location" autocorrect="off" autocapitalize="off" spellcheck="off"
-        class="form-control" #searchDefault (keyup.enter)="onEnter($event)">
-    </div>
+  <input
+    type="text"
+    placeholder="Podaj miasto, gdzie chcesz znaleźc mieszkanie"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="off"
+    class="form-control"
+    #searchDefault
+    (keyup.enter)="onEnter($event)"
+  />
 </div>

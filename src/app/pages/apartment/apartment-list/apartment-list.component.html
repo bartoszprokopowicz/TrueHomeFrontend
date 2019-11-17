@@ -1,1 +1,26 @@
-<p>apartment-list works!</p>
+<div class="justify-content-center">
+  <div class="c-m-t f-vertical o-list">
+    <app-search-bar [whichSearch]="'default'"></app-search-bar>
+    <button
+      class="mx-1"
+      mat-flat-button
+      color="primary"
+      [routerLink]="['/apartments']"
+      routerLinkActive="router-link-active"
+    >
+      Reset
+    </button>
+  </div>
+</div>
+<div class="c-m-t">
+  <mat-paginator
+    [length]="1000"
+    [pageSize]="10"
+    [pageSizeOptions]="[1, 5, 10, 15]"
+    (page)="onPaginateChange($event)"
+  >
+  </mat-paginator>
+</div>
+<div class="o-list c-m-t" *ngFor="let apartment of filteredApartmentList()">
+  <app-apartment-thumb [apartment]="apartment"></app-apartment-thumb>
+</div>

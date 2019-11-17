@@ -1,0 +1,14 @@
+<div class="f-horizontal thumb" [routerLink]="['/apartment', apartment?.ID_Ap]" routerLinkActive="router-link-active" >
+  <div class="thumbwrapper">
+    <img class="thumb--img" [src]="getImgThumb()" />
+  </div>
+  <div class="detailswrapper f-vertical">
+    <h3>{{ apartment?.Name }}</h3>
+    <h6>ul. {{ apartment?.Street }} {{ apartment?.ApartmentNumber }}, {{apartment?.City}}</h6>
+    <div class="f-horizontal">
+      <div *ngFor="let rate of avg">
+        <span class="fa fa-star checked"></span>
+      </div>
+    </div>
+  </div>
+</div>

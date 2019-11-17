@@ -1,6 +1,4 @@
 export class Apartment {
-    constructor() {}
-
     // tslint:disable-next-line: variable-name
     ID_Ap: number;
     Name: string;
@@ -8,7 +6,7 @@ export class Apartment {
     Street: string;
     ApartmentNumber: string;
     ImgThumb: string;
-    ImgList: string;
+    ImgList: string[];
     OwnerRating: number;
     LocationRating: number;
     StandardRating: number;

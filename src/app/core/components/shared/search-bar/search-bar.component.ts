@@ -37,6 +37,14 @@ export class SearchBarComponent implements OnInit {
 
   onEnter(event) {
     const inputValue = event.target.value;
-    this.router.navigate(['apartments', { street: 'lol' }]);
+    if(inputValue.includes(",")) {
+      const street = inputValue.split(",")[0].trim();
+      const city = inputValue.split(",")[1].trim();
+      this.router.navigate(['apartments'], { queryParams: { street: street, city: city } });
+    } else {
+      const city = inputValue.trim();
+      this.router.navigate(['apartments'], { queryParams: { city: city } });
+    }
+
   }
 }

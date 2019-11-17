@@ -1,7 +1,30 @@
 .container {
-  &__height{
+  &__height {
     display: flex;
     flex-flow: column;
     height: 100%;
   }
+}
+.header__title {
+  font-size: 72px;
+}
+
+.carousel {
+  width: 1200px;
+  height: 400px;
+  &-item {
+    overflow: hidden;
+    > img {
+      height: 400px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.active {
+  display: flex;
+}
+
+.c-m-t {
+  margin-top: 25px;
 }

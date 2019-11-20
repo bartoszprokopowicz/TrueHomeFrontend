@@ -1,0 +1,15 @@
+.inputwrapper {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  button {
+    position: absolute;
+    top: 1px;
+    right: -3px;
+  }
+  button + button {
+    position: absolute;
+    top: 1px;
+    right: 72px;
+  }
+}

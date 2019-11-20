@@ -1,15 +1,6 @@
 <div class="justify-content-center">
   <div class="c-m-t f-vertical o-list">
-    <app-search-bar [whichSearch]="'default'"></app-search-bar>
-    <button
-      class="mx-1"
-      mat-flat-button
-      color="primary"
-      [routerLink]="['/apartments']"
-      routerLinkActive="router-link-active"
-    >
-      Reset
-    </button>
+    <app-search-bar [whichSearch]="'default'" [label]="'Resetuj'"></app-search-bar>
   </div>
 </div>
 <div class="c-m-t">

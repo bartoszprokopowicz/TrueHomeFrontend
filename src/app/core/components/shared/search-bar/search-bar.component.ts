@@ -1,7 +1,7 @@
 /// <reference types="@types/googlemaps" />
 import { Component, OnInit, ElementRef, ViewChild, NgZone, Input } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -11,9 +11,11 @@ import { Router } from '@angular/router';
 export class SearchBarComponent implements OnInit {
 
   @Input() whichSearch: string;
+  @Input() label: string;
   @ViewChild('searchGoogle', { static: true }) public searchElementGoogle: ElementRef;
+  @ViewChild('searchDefault', { static: false }) searchElementDefault: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private router: Router) { }
+  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     if (this.whichSearch === 'google') {
@@ -35,9 +37,9 @@ export class SearchBarComponent implements OnInit {
     }
   }
 
-  onEnter(event) {
-    const inputValue = event.target.value;
-    if(inputValue.includes(",")) {
+  onEnter() {
+    const inputValue = this.searchElementDefault.nativeElement.value;
+    if (inputValue.includes(",")) {
       const street = inputValue.split(",")[0].trim();
       const city = inputValue.split(",")[1].trim();
       this.router.navigate(['apartments'], { queryParams: { street: street, city: city } });

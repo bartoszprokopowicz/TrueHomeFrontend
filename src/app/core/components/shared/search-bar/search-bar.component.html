@@ -11,14 +11,32 @@
   />
 </div>
 <div *ngIf="whichSearch === 'default'">
-  <input
-    type="text"
-    placeholder="Podaj miasto, gdzie chcesz znaleźc mieszkanie"
-    autocorrect="off"
-    autocapitalize="off"
-    spellcheck="off"
-    class="form-control"
-    #searchDefault
-    (keyup.enter)="onEnter($event)"
-  />
+  <div class="inputwrapper">
+    <input
+      type="text"
+      placeholder="Podaj miasto, gdzie chcesz znaleźc mieszkanie"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="off"
+      class="form-control"
+      #searchDefault
+      (keyup.enter)="onEnter()"
+    />
+    <button
+      class="mx-1"
+      mat-flat-button
+      color="primary"
+      (click)="onEnter()"
+    >
+      Szukaj
+    </button>
+    <button
+      class="mx-1"
+      mat-flat-button
+      color="primary"
+      [routerLink]="['/apartments']"
+    >
+      Resetuj
+    </button>
+  </div>
 </div>

@@ -131,6 +131,20 @@ export class UserHttpService {
     return userData;
   }
 
+  public getCurrentUser() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    return this.http.get<any>(
+      this.API_URL + 'User/id',
+      httpOptions
+    );
+  }
+
   public get Auth() {
     return this.auth;
   }

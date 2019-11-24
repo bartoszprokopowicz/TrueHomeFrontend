@@ -35,6 +35,9 @@ import {FileUploadModule} from 'primeng/fileupload';
     InputTextModule,
     EditorModule,
     FileUploadModule
+  ],
+  exports: [
+    ApartmentThumbComponent
   ]
 })
 export class ApartmentModule { }

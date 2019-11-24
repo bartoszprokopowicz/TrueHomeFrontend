@@ -1,11 +1,11 @@
 <div class="f-vertical detail-container m-b-10">
-    <div *ngIf="apartment.ImgList" class="col-md-12 m-b-10 imagewrapper">
-        <app-carousel-photo [photos]="apartment?.ImgList"></app-carousel-photo>
+    <div *ngIf="!isLoading" class="col-md-12 m-b-10 imagewrapper">
+        <app-carousel-photo [photos]="apartment.ImgList"></app-carousel-photo>
     </div>
     <div class="o-radio-list">
         <div class="f-horizontal detail-container--header">
             <h2>Nazwa: {{apartment?.Name}}</h2>
-            <div class="detail-container__float">
+            <div class="detail-container__float" *ngIf="showRent()">
                 <button class="mx-1" mat-flat-button color="primary">
                     Wynajmij!
                 </button>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserHttpService } from 'src/app/core/services/user/http/user-http.service';
 import { Register } from 'src/app/models/register';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
   model: Register;
   repeatedPassword: string;
 
-  constructor(private userService: UserHttpService) { }
+  constructor(private userService: UserHttpService, private router: Router) { }
 
   ngOnInit() {
     this.model = {};
@@ -23,7 +24,7 @@ export class RegisterComponent implements OnInit {
     if (this.repeatedPassword === this.model.password) {
       const response = await this.userService.register(this.model);
       console.log(response);
-      console.log('dziala');
+      this.router.navigate(['/login']);
     } else {
       console.log('spadaj');
     }

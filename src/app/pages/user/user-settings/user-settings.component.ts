@@ -12,10 +12,14 @@ export class UserSettingsComponent implements OnInit {
   constructor(private userService: UserHttpService) { }
 
   userData: UserData;
+  isLoading: boolean;
 
   ngOnInit() {
+    this.isLoading = true;
     this.userService.getDetails().then((data) => {
       this.userData = data;
+      this.isLoading = false;
+      console.log(this.userData);
     });
   }
 

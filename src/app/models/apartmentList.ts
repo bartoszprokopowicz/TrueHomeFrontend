@@ -1,6 +1,6 @@
 import { Apartment } from './apartment';
 
 export class ApartmentList {
-    apartmentsList: Apartment[];
-    hasMore: boolean;
+    apartmentsList?: Apartment[];
+    hasMore?: boolean;
 }

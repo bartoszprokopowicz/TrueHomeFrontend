@@ -1,1 +1,80 @@
-<p>apartment-edit works!</p>
+<div class="container create-container m-b-10" *ngIf="model">
+  <form class="well form-horizontal">
+    <div class="form-group">
+      <label class="col-md-4 control-label">Title</label>
+      <div class="col-md-8 inputGroupContainer">
+        <span class="input-group-addon"
+          ><i class="glyphicon glyphicon-user"></i></span
+        ><input
+          [(ngModel)]="model.Name"
+          name="Name"
+          placeholder="Title"
+          class="form-control"
+          required="true"
+          value=""
+          type="text"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Phone number</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon"
+            ><i class="glyphicon glyphicon-envelope"></i></span
+          ><input
+            name="phone"
+            [(ngModel)]="model.PhoneNumber"
+            placeholder="Phone number"
+            class="form-control"
+            required="false"
+            value=""
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-7 control-label"
+        >Photos</label
+      >
+      <div class="col-md-12 inputGroupContainer">
+        <p-fileUpload
+          customUpload="true"
+          (onSelect)="addListPhoto($event)"
+          (onRemove)="removePhoto($event)"
+          accept="image/*"
+          multiple="multiple"
+          maxFileSize="5000000"
+          #fileUpload
+        >
+        </p-fileUpload>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Description</label>
+      <div class="col-md-12">
+        <div class="editorwrapper">
+          <p-editor
+            [(ngModel)]="model.Description"
+            [style]="{ height: '320px' }"
+            name="editor"
+          ></p-editor>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <button
+          class="mx-1"
+          mat-flat-button
+          color="primary"
+          class="p-l-0"
+          (click)="onEdit()"
+        >
+          Zapisz!
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

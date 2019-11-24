@@ -1,1 +1,68 @@
-<p>register works!</p>
+<div class="wrapper fadeInDown m-b-100">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="/assets/img/logo.png" id="icon" alt="User Icon" />
+    </div>
+    <!-- Login Form -->
+    <div>
+      <input
+        type="text"
+        id="login"
+        class="fadeIn second"
+        name="login"
+        placeholder="Login"
+        [(ngModel)]="model.login"
+      />
+      <input
+        type="text"
+        id="email"
+        class="fadeIn second"
+        name="email"
+        placeholder="Email"
+        [(ngModel)]="model.email"
+      />
+      <input
+        type="text"
+        id="name"
+        class="fadeIn second"
+        name="name"
+        placeholder="Name"
+        [(ngModel)]="model.name"
+      />
+      <input
+        type="text"
+        id="surname"
+        class="fadeIn second"
+        name="surname"
+        placeholder="Surname"
+        [(ngModel)]="model.surname"
+      />
+      <input
+        type="password"
+        id="password"
+        class="fadeIn second"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="model.password"
+      />
+      <input
+        type="password"
+        id="repassword"
+        class="fadeIn second"
+        name="repassword"
+        placeholder="Repeat password"
+        [(ngModel)]="repeatedPassword"
+      />
+      <input
+        type="submit"
+        (click)="onRegister()"
+        class="fadeIn third"
+        value="Register"
+      />
+    </div>
+    <!-- Remind Passowrd -->
+    <div id="formFooter"></div>
+  </div>
+</div>

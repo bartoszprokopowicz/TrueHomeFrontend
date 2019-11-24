@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserHttpService } from 'src/app/core/services/user/http/user-http.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserHttpService) { }
 
   ngOnInit() {
   }

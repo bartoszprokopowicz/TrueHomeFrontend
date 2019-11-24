@@ -14,15 +14,25 @@ import { MaterialComponentsModule } from './core/components/shared/material-comp
 import { LoginModule } from './pages/login/login.module';
 import { WelcomeComponent } from './layout/welcome/welcome.component';
 import { GoogleMapsComponentsModule } from './core/components/shared/google-maps-components/google-maps-components.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SearchBarModule } from './core/components/shared/search-bar/search-bar.module';
+import { CarouselPhotoModule } from './core/components/shared/carousel-photo/carousel-photo.module';
+import { JwtInterceptor } from './core/interceptors/Jwt-interceptor';
+import { ErrorInterceptor } from './core/interceptors/error-interceptor';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuard } from './core/services/auth-guard/auth-guard.service';
+
+export function tokenGetter() {
+  const tokenType = localStorage.getItem('token_type');
+  return localStorage.getItem(tokenType);
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
     NavbarComponent,
-    WelcomeComponent
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +44,21 @@ import { SearchBarModule } from './core/components/shared/search-bar/search-bar.
     MaterialComponentsModule,
     GoogleMapsComponentsModule,
     HttpClientModule,
-    SearchBarModule
+    SearchBarModule,
+    CarouselPhotoModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        whitelistedDomains: ['localhost:50649'],
+        blacklistedRoutes: []
+      }
+    })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

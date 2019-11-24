@@ -1,6 +1,6 @@
 <div class="justify-content-center">
   <div class="c-m-t f-vertical o-list">
-    <app-search-bar [whichSearch]="'default'" [label]="'Resetuj'"></app-search-bar>
+    <app-search-bar [whichSearch]="'default'" [label]="'Resetuj'" [module]="'apartments'"></app-search-bar>
   </div>
 </div>
 <div class="c-m-t">
@@ -12,6 +12,6 @@
   >
   </mat-paginator>
 </div>
-<div class="o-list c-m-t" *ngFor="let apartment of filteredApartmentList()">
+<div class="o-list c-m-t m-b-10" *ngFor="let apartment of filteredApartmentList()">
   <app-apartment-thumb [apartment]="apartment"></app-apartment-thumb>
 </div>

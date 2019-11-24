@@ -1,0 +1,26 @@
+.create-container {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.514);
+  width: 100vh;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 3%);
+  border-radius: 15px;
+  padding: 10px;
+  &--header {
+    overflow: hidden;
+  }
+  &__float {
+    margin-left: auto;
+    float: right;
+  }
+}
+
+.description-container {
+  border: solid #000000 3px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  height: 25vh;
+  width: 98vh;
+}

@@ -1,7 +1,25 @@
-<div class="f-horizontal">
-    <h3>{{apartment?.Name}}</h3>
-    <h3>{{apartment?.City}}</h3>
-    <h3>{{apartment?.Street}}</h3>
-    <h3>{{apartment?.ApartmentNumber}}</h3>
-    <h3>{{apartment?.Description}}</h3>
+<div class="f-vertical detail-container m-b-10">
+    <div *ngIf="apartment.ImgList" class="col-md-12 m-b-10 imagewrapper">
+        <app-carousel-photo [photos]="apartment?.ImgList"></app-carousel-photo>
+    </div>
+    <div class="o-radio-list">
+        <div class="f-horizontal detail-container--header">
+            <h2>Nazwa: {{apartment?.Name}}</h2>
+            <div class="detail-container__float">
+                <button class="mx-1" mat-flat-button color="primary">
+                    Wynajmij!
+                </button>
+            </div>
+        </div>
+        <h3>Adres: {{apartment?.Street}} {{apartment?.ApartmentNumber}}, {{apartment?.City}}</h3>
+        <h3>Numer telefonu: {{apartment?.PhoneNumber}}</h3>
+        <div class="f-horizontal">
+            <h3>Ocena: </h3>
+            <div *ngFor="let rate of getAvg()">
+                <span class="fa fa-star checked"></span>
+            </div>
+        </div>
+        <div class="description-container m-b-10" [innerHTML]="apartment?.Description">
+        </div>
+    </div>
 </div>

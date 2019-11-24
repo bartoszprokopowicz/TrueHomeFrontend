@@ -16,6 +16,7 @@ export class ApartmentDetailsComponent implements OnInit, OnDestroy {
 
   apartment: Apartment;
   destroy$: Subject<boolean> = new Subject<boolean>();
+  rating: number;
 
   ngOnDestroy(): void {
     this.destroy$.next(true);
@@ -36,7 +37,23 @@ export class ApartmentDetailsComponent implements OnInit, OnDestroy {
     .subscribe((apartment: Apartment) => {
       // tslint:disable-next-line: prefer-const
       this.apartment = apartment;
+      this.rating = this.calculateAvg();
     });
+  }
+
+  calculateAvg(): number {
+    let rate = this.apartment.LocationRating + this.apartment.StandardRating + this.apartment.PriceRating + this.apartment.OwnerRating;
+    rate = rate / 4;
+    return Math.round(rate);
+  }
+
+  getAvg(): number[] {
+    const temp: number[] = [];
+    let i: number;
+    for ( i = 0; i < this.calculateAvg(); i++) {
+      temp.push(i);
+    }
+    return temp;
   }
 
 }

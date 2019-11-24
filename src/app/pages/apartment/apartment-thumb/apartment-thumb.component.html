@@ -1,6 +1,6 @@
 <div class="f-horizontal thumb" [routerLink]="['/apartment', apartment?.ID_Ap]" routerLinkActive="router-link-active" >
   <div class="thumbwrapper">
-    <img class="thumb--img" [src]="getImgThumb()" />
+    <img class="thumb--img" [src]="apartment?.ImgThumb" />
   </div>
   <div class="detailswrapper f-vertical">
     <h3>{{ apartment?.Name }}</h3>

@@ -9,6 +9,12 @@ import { ApartmentDetailsComponent } from './apartment-details/apartment-details
 import { ApartmentThumbComponent } from './apartment-thumb/apartment-thumb.component';
 import { SearchBarModule } from 'src/app/core/components/shared/search-bar/search-bar.module';
 import { MaterialComponentsModule } from 'src/app/core/components/shared/material-components/material-components.module';
+import { CarouselPhotoModule } from 'src/app/core/components/shared/carousel-photo/carousel-photo.module';
+import { InputTextModule } from 'primeng/inputtext';
+import { EditorModule } from 'primeng/editor';
+import { FormsModule } from '@angular/forms';
+import { RatingModule } from 'primeng/rating';
+import {FileUploadModule} from 'primeng/fileupload';
 
 @NgModule({
   declarations: [
@@ -19,10 +25,16 @@ import { MaterialComponentsModule } from 'src/app/core/components/shared/materia
     ApartmentThumbComponent,
   ],
   imports: [
+    FormsModule,
     CommonModule,
     ApartmentRoutingModule,
+    RatingModule,
     SearchBarModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+    CarouselPhotoModule,
+    InputTextModule,
+    EditorModule,
+    FileUploadModule
   ]
 })
 export class ApartmentModule { }

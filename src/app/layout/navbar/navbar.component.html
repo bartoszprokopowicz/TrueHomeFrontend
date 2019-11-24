@@ -95,28 +95,55 @@
           </div>
         </li>
       </ul>
-      <span>
-        <a [routerLink]="['/login']" routerLinkActive="router-link-active">
+      <div *ngIf="!userService.isLogged()">
+        <span>
+          <a>
+            <button
+              class="mx-1"
+              mat-flat-button
+              color="primary"
+              [routerLink]="['/login']"
+              routerLinkActive="router-link-active"
+            >
+              Login
+            </button>
+          </a>
           <button
             class="mx-1"
             mat-flat-button
             color="primary"
-            [routerLink]="['/login']"
+            [routerLink]="['/register']"
             routerLinkActive="router-link-active"
           >
-            Login
+            Register
           </button>
-        </a>
-        <button
-          class="mx-1"
-          mat-flat-button
-          color="primary"
-          [routerLink]="['/register']"
-          routerLinkActive="router-link-active"
-        >
-          Register
-        </button>
-      </span>
+        </span>
+      </div>
+      <div *ngIf="userService.isLogged()">
+          <span>
+            <a>
+              <button
+                class="mx-1"
+                mat-flat-button
+                color="primary"
+                [routerLink]="['/user/settings']"
+                routerLinkActive="router-link-active"
+              >
+                Settings
+              </button>
+            </a>            
+            <a>
+              <button
+                class="mx-1"
+                mat-flat-button
+                color="primary"
+                (click)="userService.logout()"
+              >
+                Logout
+              </button>
+            </a>
+          </span>
+        </div>
     </div>
   </div>
 </nav>

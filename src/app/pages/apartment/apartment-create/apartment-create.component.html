@@ -1,1 +1,149 @@
-<p>apartment-create works!</p>
+<div class="container create-container m-b-10">
+  <form class="well form-horizontal">
+    <div class="form-group">
+      <label class="col-md-4 control-label">Title</label>
+      <div class="col-md-8 inputGroupContainer">
+        <span class="input-group-addon"
+          ><i class="glyphicon glyphicon-user"></i></span
+        ><input
+          [(ngModel)]="model.Name"
+          name="Name"
+          placeholder="Title"
+          class="form-control"
+          required="true"
+          value=""
+          type="text"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Street</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon"
+            ><i class="glyphicon glyphicon-home"></i></span
+          ><input
+            name="Street"
+            [(ngModel)]="model.Street"
+            placeholder="Address Line 1"
+            class="form-control"
+            required="true"
+            value=""
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Apartment Number</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon"
+            ><i class="glyphicon glyphicon-home"></i></span
+          ><input
+            name="addressLine2"
+            [(ngModel)]="model.ApartmentNumber"
+            placeholder="Address Line 2"
+            class="form-control"
+            required="true"
+            value=""
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">City</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon"
+            ><i class="glyphicon glyphicon-home"></i></span
+          ><input
+            name="city"
+            [(ngModel)]="model.City"
+            placeholder="City"
+            class="form-control"
+            required="true"
+            value=""
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Email</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon"
+            ><i class="glyphicon glyphicon-envelope"></i></span
+          ><input
+            id="email"
+            name="email"
+            placeholder="Email"
+            class="form-control"
+            required="false"
+            value=""
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label">Phone number</label>
+        <div class="col-md-8 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-envelope"></i></span
+            ><input
+              name="phone"
+              [(ngModel)]="model.PhoneNumber"
+              placeholder="Phone number"
+              class="form-control"
+              required="false"
+              value=""
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    <div class="form-group">
+      <label class="col-md-7 control-label">Photos (First photo becomses thumbnail)</label>
+      <div class="col-md-12 inputGroupContainer">
+        <p-fileUpload
+          customUpload="true"
+          (onSelect)="addListPhoto($event)"
+          (onRemove)="removePhoto($event)"
+          accept="image/*"
+          multiple="multiple"
+          maxFileSize="5000000"
+        >
+        </p-fileUpload>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Description</label>
+      <div class="col-md-12">
+        <div class="editorwrapper">
+          <p-editor
+            [(ngModel)]="model.Description"
+            [style]="{ height: '320px' }"
+            name="editor"
+          ></p-editor>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+          <button
+            class="mx-1"
+            mat-flat-button
+            color="primary"
+            class="p-l-0"
+            (click)="tempOnSave()"
+          >
+            Zapisz!
+          </button>
+        </div>
+      </div>
+  </form>
+</div>

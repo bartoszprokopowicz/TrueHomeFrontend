@@ -6,8 +6,8 @@ html,
 body {
   height: 100%;
   background-color: rgb(204, 204, 204);
-  font-family: Takeaway Sans Campaign, Avant Garde, Century Gothic, Helvetica,
-    Arial, sans-serif;
+  font-family: Roboto, Arial, sans-serif;
+  //overflow: hidden;
 }
 body {
   margin: 0;
@@ -19,7 +19,45 @@ body {
   flex-direction: row;
 }
 
+.o-width-50 {
+  width: 50%;
+}
+
 .f-vertical {
   display: flex;
   flex-direction: column;
+}
+
+.o-radio-list:only-child {
+  margin-bottom: 10px;
+}
+
+@for $i from 0 through 100 {
+  .m-b-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .m-t-#{$i} {
+    margin-top: #{$i}px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .p-b-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .p-t-#{$i} {
+    padding-top: #{$i}px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .p-l-#{$i} {
+    padding-left: #{$i}px;
+  }
 }

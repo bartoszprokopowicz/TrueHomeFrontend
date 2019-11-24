@@ -1,0 +1,11 @@
+<div class="center">
+    <div class="carousel">
+        <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide styleClass="carousel" *ngFor="let image of photos">
+                <div class="imagewrapper">
+                    <img [src]="image" class="imagewrapper" alt="Random first slide">
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+</div>

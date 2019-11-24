@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Apartment } from 'src/app/models/apartment';
+import { PictureHttpService } from 'src/app/core/services/picture/http/picture-http.service';
 
 @Component({
   selector: 'app-apartment-thumb',
@@ -10,16 +11,22 @@ export class ApartmentThumbComponent implements OnInit {
 
   @Input() apartment: Apartment;
   avg: number[] = [];
-  constructor() { }
+  constructor(private phService: PictureHttpService) { }
 
   ngOnInit() {
     this.avg = this.getAvg();
+    // this.getImgThumb();
   }
 
-  getImgThumb(): string {
-    const apiUrl = 'http://localhost:50649/api/Pictures/' + this.apartment.ID_Ap + '/';
-    return this.apartment.ImgThumb.slice(apiUrl.length);
-  }
+  // getImgThumb() {
+  //   this.phService.getPicture(this.apartment.ImgThumb)
+  //     .subscribe((file) => {
+  //       this.img = file;
+  //     });
+
+  //   // const apiUrl = 'http://localhost:50649/api/Pictures/' + this.apartment.ID_Ap + '/';
+  //   // return this.apartment.ImgThumb.slice(apiUrl.length);
+  // }
 
   calculateAvg(): number {
     let rate = this.apartment.LocationRating + this.apartment.StandardRating + this.apartment.PriceRating + this.apartment.OwnerRating;
@@ -30,7 +37,7 @@ export class ApartmentThumbComponent implements OnInit {
   getAvg(): number[] {
     const temp: number[] = [];
     let i: number;
-    for ( i = 0; i < this.calculateAvg(); i++) {
+    for (i = 0; i < this.calculateAvg(); i++) {
       temp.push(i);
     }
     return temp;

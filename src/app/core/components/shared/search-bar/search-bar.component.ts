@@ -12,6 +12,7 @@ export class SearchBarComponent implements OnInit {
 
   @Input() whichSearch: string;
   @Input() label: string;
+  @Input() module: string;
   @ViewChild('searchGoogle', { static: true }) public searchElementGoogle: ElementRef;
   @ViewChild('searchDefault', { static: false }) searchElementDefault: ElementRef;
 
@@ -37,15 +38,19 @@ export class SearchBarComponent implements OnInit {
     }
   }
 
+  clearSearch() {
+    this.searchElementDefault.nativeElement.value = '';
+  }
+
   onEnter() {
     const inputValue = this.searchElementDefault.nativeElement.value;
-    if (inputValue.includes(",")) {
-      const street = inputValue.split(",")[0].trim();
-      const city = inputValue.split(",")[1].trim();
-      this.router.navigate(['apartments'], { queryParams: { street: street, city: city } });
+    if (inputValue.includes(',')) {
+      const street = inputValue.split(',')[0].trim();
+      const city = inputValue.split(',')[1].trim();
+      this.router.navigate([this.module], { queryParams: { street, city } });
     } else {
       const city = inputValue.trim();
-      this.router.navigate(['apartments'], { queryParams: { city: city } });
+      this.router.navigate([this.module], { queryParams: { city } });
     }
 
   }

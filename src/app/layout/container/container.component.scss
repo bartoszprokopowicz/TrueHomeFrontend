@@ -1,3 +1,9 @@
 .container__relative {
   position: relative;
 }
+
+.over > p-messages {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}

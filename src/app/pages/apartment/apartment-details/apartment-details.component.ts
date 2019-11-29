@@ -20,6 +20,7 @@ export class ApartmentDetailsComponent implements OnInit, OnDestroy {
   rating: number;
   currentUserId: string;
   isLoading: boolean;
+  price: number;
 
   ngOnDestroy(): void {
     this.destroy$.next(true);
@@ -29,6 +30,7 @@ export class ApartmentDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.isLoading = true;
+    this.price = Math.floor(Math.random() * (2000 - 500 + 1)) + 500;
     this.route.params
       .pipe(takeUntil(this.destroy$))
       .subscribe((params) => {
@@ -56,6 +58,12 @@ export class ApartmentDetailsComponent implements OnInit, OnDestroy {
   showRent() {
     if (!this.isLoading) {
       return this.apartment.IDUser !== this.currentUserId;
+    }
+  }
+  
+  showEdit() {
+    if (!this.isLoading) {
+      return this.apartment.IDUser === this.currentUserId;
     }
   }
 

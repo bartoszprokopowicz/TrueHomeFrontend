@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'jakis-adres.me',
-  apiURL: 'http://localhost:50649/'
+  apiURL: 'http://localhost:50649/api/'
 };
 
 /*

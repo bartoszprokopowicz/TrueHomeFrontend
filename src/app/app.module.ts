@@ -21,6 +21,11 @@ import { JwtInterceptor } from './core/interceptors/Jwt-interceptor';
 import { ErrorInterceptor } from './core/interceptors/error-interceptor';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './core/services/auth-guard/auth-guard.service';
+import { RentingModule } from './pages/renting/renting.module';
+import { RatingModule } from 'primeng/rating';
+
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 export function tokenGetter() {
   const tokenType = localStorage.getItem('token_type');
@@ -35,11 +40,15 @@ export function tokenGetter() {
     WelcomeComponent,
   ],
   imports: [
+    MessageModule,
+    MessagesModule,
     BrowserModule,
     AppRoutingModule,
     ApartmentModule,
     UserModule,
     LoginModule,
+    RentingModule,
+    RatingModule,
     BrowserAnimationsModule,
     MaterialComponentsModule,
     GoogleMapsComponentsModule,

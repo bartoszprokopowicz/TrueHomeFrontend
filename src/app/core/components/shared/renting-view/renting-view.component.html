@@ -1,0 +1,6 @@
+<div class="container f-vertical">
+    <h3>{{ rentedApartment.Name }}</h3>
+    <h6>St. {{ rentedApartment.Street }} {{ rentedApartment.ApartmentNumber }}, {{rentedApartment.City}}</h6>
+    <h6>Since: {{renting.date_from | date:'fullDate'}}</h6>
+    <h6>To: {{renting.date_to | date:'fullDate'}}</h6>
+</div>

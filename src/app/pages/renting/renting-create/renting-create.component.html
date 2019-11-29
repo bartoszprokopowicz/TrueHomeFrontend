@@ -1,0 +1,20 @@
+<div class="renting-container m-t-20">
+  <h1>Od:</h1>
+  <p-calendar
+    [(ngModel)]="model.date_from"
+    [showIcon]="true"
+    dateFormat="dd/mm/yy"
+    #calendar
+  ></p-calendar>
+  <h1>Do:</h1>
+  <p-calendar
+    [(ngModel)]="model.date_to"
+    [showIcon]="true"
+    dateFormat="dd/mm/yy"
+    #calendar
+  ></p-calendar>
+  <h1>Cena: {{ price }} zł/miesiąc</h1>
+  <button class="mx-1" mat-flat-button color="primary" (click)="onAccept()">
+    Wynajmij!
+  </button>
+</div>

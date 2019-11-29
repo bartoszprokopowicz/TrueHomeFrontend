@@ -12,25 +12,18 @@
         id="login"
         formControlName="login"
         class="fadeIn second"
-        name="login"
-        [(ngModel)]="model.login"
         placeholder="login"
+        autocomplete="username"
       />
       <input
         type="password"
         id="password"
         formControlName="password"
         class="fadeIn third"
-        name="login"
-        [(ngModel)]="model.password"
         placeholder="password"
+        autocomplete="current-password"
       />
-      <input
-        type="submit"
-        class="fadeIn fourth"
-        value="Log In"
-        (click)="onLogin()"
-      />
+      <input type="submit" class="fadeIn fourth" value="Log In" />
     </form>
     <!-- Remind Passowrd -->
     <div id="formFooter">

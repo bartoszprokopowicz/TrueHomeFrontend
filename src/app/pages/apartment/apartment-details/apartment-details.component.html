@@ -1,25 +1,40 @@
 <div class="f-vertical detail-container m-b-10">
-    <div *ngIf="!isLoading" class="col-md-12 m-b-10 imagewrapper">
-        <app-carousel-photo [photos]="apartment.ImgList"></app-carousel-photo>
+  <div *ngIf="!isLoading" class="col-md-12 m-b-10 imagewrapper">
+    <app-carousel-photo [photos]="apartment.ImgList"></app-carousel-photo>
+  </div>
+  <div class="o-radio-list">
+    <div class="f-horizontal detail-container--header">
+      <h2>Title: {{ apartment?.Name }}</h2>
+      <div class="detail-container__float" *ngIf="showRent()">
+        <div [routerLink]="['renting', 'create']" [queryParams]="{ p: price }">
+          <button class="mx-1" mat-flat-button color="primary">
+            Rent!
+          </button>
+        </div>
+      </div>
+      <div class="detail-container__float" *ngIf="showEdit()">
+        <div [routerLink]="['edit']">
+          <button class="mx-1" mat-flat-button color="primary">
+            Edit!
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="o-radio-list">
-        <div class="f-horizontal detail-container--header">
-            <h2>Nazwa: {{apartment?.Name}}</h2>
-            <div class="detail-container__float" *ngIf="showRent()">
-                <button class="mx-1" mat-flat-button color="primary">
-                    Wynajmij!
-                </button>
-            </div>
-        </div>
-        <h3>Adres: {{apartment?.Street}} {{apartment?.ApartmentNumber}}, {{apartment?.City}}</h3>
-        <h3>Numer telefonu: {{apartment?.PhoneNumber}}</h3>
-        <div class="f-horizontal">
-            <h3>Ocena: </h3>
-            <div *ngFor="let rate of getAvg()">
-                <span class="fa fa-star checked"></span>
-            </div>
-        </div>
-        <div class="description-container m-b-10" [innerHTML]="apartment?.Description">
-        </div>
+    <h3>Price: {{ price }} zł/month</h3>
+    <h3>
+      Adres: {{ apartment?.Street }} {{ apartment?.ApartmentNumber }},
+      {{ apartment?.City }}
+    </h3>
+    <h3>Phone number: {{ apartment?.PhoneNumber }}</h3>
+    <div class="f-horizontal">
+      <h3>Ocena:</h3>
+      <div *ngFor="let rate of getAvg()">
+        <span class="fa fa-star checked"></span>
+      </div>
     </div>
+    <div
+      class="description-container m-b-10"
+      [innerHTML]="apartment?.Description"
+    ></div>
+  </div>
 </div>

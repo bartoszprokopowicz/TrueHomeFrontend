@@ -1,7 +1,14 @@
-<h1>{{userData?.user.Login}}</h1>
+<h1>{{ userData?.user.Login }}</h1>
+<h2>My actual renting:</h2>
+<div *ngIf="renting !== undefined && rentedApartment !== undefined">
+  <app-renting-view [renting]="renting" [rentedApartment]="rentedApartment"></app-renting-view>
+</div>
 <h2>List of my apartments:</h2>
-<div *ngIf="!isLoading">
-    <div class="o-list c-m-t m-b-10" *ngFor="let apartment of userData.apartmentList">
-        <app-apartment-thumb [apartment]="apartment"></app-apartment-thumb>
-    </div>
+<div *ngIf="userData !== undefined">
+  <div
+    class="o-list c-m-t m-b-10"
+    *ngFor="let apartment of userData.apartmentList"
+  >
+    <app-apartment-thumb [apartment]="apartment"></app-apartment-thumb>
+  </div>
 </div>

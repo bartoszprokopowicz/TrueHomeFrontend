@@ -12,7 +12,7 @@ export class RentingHttpService {
   constructor(private http: HttpClient) { }
 
   public addRenting(idAp: number, renting: Renting) {
-    renting.iDAp = idAp;
+    renting.IDAp = idAp;
     const httpOptions = {
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin': '*'
@@ -22,7 +22,7 @@ export class RentingHttpService {
   }
 
   public updateRenting(idAp: number, renting: Renting) {
-    renting.iDAp = idAp;
+    renting.IDAp = idAp;
     const httpOptions = {
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin': '*'
